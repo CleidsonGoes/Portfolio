@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio — Cleidson Goes</title>
+    <meta name="description" content="Portfólio responsivo de Cleidson Goes — Sobre, Formação, Experiência, Cursos, Habilidades e Projetos Power BI" />
+    <style>
+        :root{
+        --bg:#0f1724;
+        --card:#0b1220;
+        --muted:#9aa4b2;
+        --accent:#06b6d4;
+        --glass: rgba(255,255,255,0.03);
+        --radius:14px;
+        --max-width:1100px;
+        color-scheme: dark;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+        margin:0;
+        font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background:linear-gradient(180deg,#071022 0%, #071827 100%);
+        color:#e6eef6;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+        line-height:1.45;
+        padding:24px 16px;
+        display:flex;
+        justify-content:center;
+        }
+
+        .container{
+        width:100%;
+        max-width:var(--max-width);
+        }
+
+        header{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+        margin-bottom:22px;
+        }
+        .brand{display:flex;align-items:center;gap:12px}
+        .logo{
+        width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#3b82f6);
+        display:grid;place-items:center;font-weight:700;color:#02232b;
+        box-shadow:0 6px 20px rgba(6,182,212,0.12);
+        }
+        nav{display:flex;gap:12px;align-items:center}
+        nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;font-weight:600}
+        nav a:hover{color:var(--accent);background:var(--glass)}
+
+        /* Mobile nav */
+        .menu-btn{display:none;border:0;background:transparent;color:var(--muted);font-size:20px}
+
+        main{display:grid;grid-template-columns:1fr 360px;gap:22px}
+
+        /* Left content */
+        .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        padding:18px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(2,6,23,0.6);}
+
+        .hero{display:flex;gap:18px;align-items:center}
+        .avatar{flex:0 0 120px;height:180px;border-radius:16px; background:linear-gradient(135deg,#0ea5a6,#7c3aed);display:grid;place-items:center;font-size:18px;font-weight:700}
+        .hero h1{margin:0;font-size:22px}
+        .hero p{margin:6px 0 0;color:var(--muted)}
+
+        .section{margin-top:16px}
+        .section h2{margin:0 0 12px 0;font-size:16px}
+
+        .education, .experience{display:flex;flex-direction:column;gap:12px}
+        .item{padding:12px;border-radius:12px;background:rgba(255,255,255,0.02)}
+        .item h3{margin:0;font-size:15px}
+        .item .meta{font-size:13px;color:var(--muted);margin-top:6px}
+
+        .skills{display:flex;flex-wrap:wrap;gap:12px}
+        .skill{min-width:140px;flex:1 1 180px;background:rgba(255,255,255,0.02);padding:10px;border-radius:10px}
+        .skill .name{font-weight:700}
+        .bar{height:8px;background:rgba(255,255,255,0.04);border-radius:999px;margin-top:8px;overflow:hidden}
+        .bar > span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),#7c3aed)}
+
+        /* Right column */
+        aside{position:sticky;top:24px;height:fit-content}
+        .card.small{padding:14px}
+        .contact{display:flex;flex-direction:column;gap:8px}
+        .btn{display:inline-block;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:700}
+        .btn.primary{background:linear-gradient(90deg,var(--accent),#3b82f6);color:#021d23}
+
+        .projects-grid{display:grid;grid-template-columns:1fr;gap:12px}
+        .project{padding:12px;border-radius:12px;background:rgba(255,255,255,0.02)}
+        .project iframe{width:100%;height:380px;border:0;border-radius:8px;background:#071022}
+
+        footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px}
+
+        /* Responsive */
+        @media (max-width:980px){
+        main{grid-template-columns:1fr}
+        aside{position:static}
+        .menu-btn{display:inline-block}
+        nav{display:none;position:absolute;top:80px;right:16px;background:var(--card);padding:12px;border-radius:12px;box-shadow:0 10px 40px rgba(2,6,23,0.6)}
+        nav.show{display:flex;flex-direction:column}
+        .avatar{flex:0 0 86px;height:86px}
+        }
+
+        @media (max-width:480px){
+        body{padding:12px}
+        .logo{width:46px;height:46px}
+        .brand .title{display:none}
+        .hero h1{font-size:18px}
+        .project iframe{height:160px}
+        }
+
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="brand">
+                    <div class="logo" aria-hidden>CG</div>
+                    <div class="title">
+                    <div style="font-weight:700">Cleidson Goes</div>
+                    <div style="font-size:13px;color:var(--muted)">Desenvolvedor Web Full Stack</div>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="menu-btn" id="menuBtn" aria-controls="mainNav" aria-expanded="false">☰</button>
+                    <nav id="mainNav" role="navigation" aria-label="Navegação principal">
+                        <a href="#sobre">Sobre</a>
+                        <a href="#formacao">Formação</a>
+                        <a href="#experiencia">Experiência</a>
+                        <a href="#cursos">Outros cursos</a>
+                        <a href="#habilidades">Habilidades</a>
+                        <a href="#projetos">Projetos</a>
+                    </nav>
+                </div>
+            </header>
+
+            <main>
+            <section>
+                <article class="card hero" id="sobre" tabindex="0">
+                    <img class="avatar" src="perfil.png" alt="Foto de perfil" />
+                    <div>
+                        <h1>Olá — eu sou Cleidson Goes</h1>
+                        <p>Olá, sou um entusiasta de tecnologia que está direcionando seu foco para a área de Análise de negócios/dados (BI). Atualmente, tenho experiência profissional e estou me especializando em ferramentas e linguagens voltadas para dados, com cursos em Python, R, Power BI, SQL e Excel. Estou focado em transformar dados em informações valiosas por meio de análises precisas, visualizações impactantes e soluções baseadas em evidências para apoiar a tomada de decisões estratégicas.</p>
+                        <p style="margin-top:10px;color:var(--muted);font-size:13px">Local: Salvador, Brasil • Disponibilidade: júnior</p>
+                    </div>
+                </article>
+
+                <article class="section card" id="formacao" tabindex="0">
+                    <h2>Formação educacional</h2>
+                    <div class="education">
+                        <div class="item">
+                            <h3>Análise e Desenvolvimento de Sistemas — Estácio</h3>
+                            <div class="meta">Conclusão: julho de 2025</div>
+                        </div>
+
+                        <div class="item">
+                            <h3>Desenvolvimento Web Full Stack — Trybe</h3>
+                            <div class="meta">Conclusão: maio de 2024</div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="section card" id="experiencia" tabindex="0">
+                    <h2>Experiências profissionais</h2>
+                    <div class="experience">
+                        <div class="item">
+                            <h3>Analista de BI (Estágio) — Proenge Brasil Engenharia LTDA</h3>
+                            <div class="meta">Dez/2024 — Jul/2025 (08 meses)<br><br>
+                                • Desenvolvimento de aplicações em VBA para tratativa de dados<br>
+                                • Criações e manipulações de bancos de dados em SQL Server<br>
+                                • Suporte técnico remoto via Any Desk<br>
+                                • Desenvolvimento de aplicações para relatórios automático em Excel/VBA<br>
+                                • Resolução de problemas com auxílio da Inteligência Artificial<br>
+                                • Reuniões empresariais.
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3>Auxiliar Técnico Administrativo — Fundação Luís Eduardo Magalhães</h3>
+                            <div class="meta">Ago/2019 — Ago/2021 (02 anos)<br><br>
+                                • Manuseio de arquivos e documentos, Inclusão de dados e arquivos em sistema.<br>
+                                • Atendimento ao público - com 20.000 atendimentos feitos.<br>
+                                • Suporte de informática, Envio de e-mail, Digitalização, impressão e arquivamento de documentos físicos.<br>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <h3>Instrutor de Informática — Mega Cursos</h3>
+                            <div class="meta">Jan/2012 — Nov/2012 (01 ano)<br><br>
+                                • Ministração de aulas no pacote Microsoft Office e Corel Draw.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="section card" id="cursos" tabindex="0">
+                <h2>Outros cursos</h2>
+                <div class="education">
+                    <div class="item">
+                    <h3>Power BI para Análise de Dados — Data Science Academy</h3>
+                    <div class="meta">Power BI em banco de dados, gerar relatórios e Dashboards interativos, agregar, filtrar e transformar os dados, disponibilizar sua visualização na nuvem e smartphone, customizar o Power BI, integrar com o Microsoft Office.</div>
+                    </div>
+                    <div class="item">
+                    <h3>Excel Impressionador - Básico ao Avançado — Hashtag Treinamentos</h3>
+                    <div class="meta">Atalhos, Conceitos Básicos, Formatação, Conceitos Intermediários, Fórmulas Básicas, Gráficos, Fórmulas Avançadas, Conceitos Avançados, Dashboards e Resumos Gerenciais, Macros e VBA Automatização, Google Sheets (Planilhas do Google) e Power Query.</div>
+                    </div>
+                </div>
+                </article>
+
+                <article class="section card" id="habilidades" tabindex="0">
+                <h2>Principais habilidades</h2>
+                <div class="skills">
+                    <div class="skill">
+                    <div class="name">JavaScript</div>
+                    <div class="bar" aria-hidden><span style="width:85%"></span></div>
+                    </div>
+                    <div class="skill">
+                    <div class="name">Linguagem R</div>
+                    <div class="bar" aria-hidden><span style="width:80%"></span></div>
+                    </div>
+                    <div class="skill">
+                    <div class="name">Estatística</div>
+                    <div class="bar" aria-hidden><span style="width:75%"></span></div>
+                    </div>
+                    <div class="skill">
+                    <div class="name">SQL / MySQL / PostgreSQL</div>
+                    <div class="bar" aria-hidden><span style="width:70%"></span></div>
+                    </div>
+                    <div class="skill">
+                    <div class="name">Python</div>
+                    <div class="bar" aria-hidden><span style="width:60%"></span></div>
+                    </div>
+                    <div class="skill">
+                    <div class="name">Power BI / Visualização de dados / DAX</div>
+                    <div class="bar" aria-hidden><span style="width:82%"></span></div>
+                    </div>
+                </div>
+                </article>
+
+                <article class="section card" id="projetos" tabindex="0">
+                <h2>Projetos</h2>
+                <p style="color:var(--muted);margin-top:0;margin-bottom:12px">Abaixo você pode colocar relatórios publicados no Power BI (embeds), ou imagens/screenshots dos dashboards. Substitua os iframes pelos links de compartilhamento dos seus relatórios.</p>
+
+                <div class="projects-grid">
+                    <div class="project">
+                        <h3>Dashboard — Análise Financeira — Receita, Custo e Margem</h3>
+                        <!-- Exemplo de iframe: substitua src pelo link de embed público do Power BI -->
+                        <iframe title="Análise de Vendas" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOTJkMmYxYmItN2U0ZC00N2ZjLTk0ODktZTFhZWZhYTliNjc4IiwidCI6Ijk4ZTg4MTVmLTljZWEtNDljNC1iYzhjLTljNWM5ZDRhYjRlZSJ9" frameborder="0" allowFullScreen="true"></iframe>
+                        <p class="meta" style="color:var(--muted);margin-top:8px">Descrição: “Dashboard desenvolvido no Power BI para análise de desempenho comercial. Traz indicadores de receita, custos e margem, com detalhamento por vendedores, linhas e grupos de produtos, permitindo identificar oportunidades de crescimento e monitorar resultados de forma estratégica. Ferramentas: Power BI, DAX, consultas em Excel/CSV e ETL."</p>
+                    </div>
+
+                    <div class="project">
+                    <h3>Dashboard — Custos e Performance</h3>
+                    <iframe src="about:blank" title="Relatório Power BI — Custos (substitua o src)"></iframe>
+                    <p class="meta" style="color:var(--muted);margin-top:8px">Descrição: Visualizações de KPIs, variação mensal e segmentação por unidades/centros de custo.</p>
+                    </div>
+                </div>
+                </article>
+
+                <footer>
+                <div style="margin-top:6px">© <span id="year"></span> Cleidson Goes</div>
+                </footer>
+            </section>
+
+                <aside>
+                    <div class="card small contact">
+                    <h3>Contato</h3>
+                    <div class="meta">Email: <strong style="color:var(--accent)">jorgegoes4@gmail.com</strong></div>
+                    <div class="meta">Telefone: <strong style="color:var(--accent)">+55 (71) 99942-2427</strong></div>
+                    <div style="margin-top:8px">
+                        <a class="btn primary" href="mailto:seu.email@exemplo.com">Enviar email</a>
+                    </div>
+                    </div>
+
+                    <div class="card small" style="margin-top:12px">
+                    <h3>Resumo rápido</h3>
+                    <p class="meta">Analista de BI — Experiência com projetos em Python e Power BI — Buscando oportunidade como júnior.</p>
+                    </div>
+
+                    <div class="card small" style="margin-top:12px">
+                    <h3>Links</h3>
+                    <p class="meta">GitHub: <a href="https://github.com/CleidsonGoes" style="color:var(--accent)">https://github.com/CleidsonGoes</a></p>
+                    <p class="meta">LinkedIn: <a href="https://www.linkedin.com/in/cleidson-jorge-s-goes/" style="color:var(--accent)">https://www.linkedin.com/in/cleidson-jorge-s-goes/</a></p>
+                    </div>
+                </aside>
+            </main>
+        </div>
+
+        <script>
+            // small interactive helpers
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            const btn = document.getElementById('menuBtn');
+            const nav = document.getElementById('mainNav');
+            btn.addEventListener('click', ()=>{
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            nav.classList.toggle('show');
+            });
+
+            // smooth scrolling for same-page links
+            document.querySelectorAll('a[href^="#"]').forEach(a=>{
+            a.addEventListener('click', (e)=>{
+                const target = document.querySelector(a.getAttribute('href'));
+                if(target){
+                e.preventDefault();
+                target.scrollIntoView({behavior:'smooth', block:'start'});
+                // close mobile nav if open
+                if(nav.classList.contains('show')){ nav.classList.remove('show'); btn.setAttribute('aria-expanded','false'); }
+                }
+            })
+            });
+
+            // accessibility: enable keyboard focus styles when user uses keyboard
+            function handleFirstTab(e){
+            if(e.key === 'Tab') document.body.classList.add('show-focus');
+            window.removeEventListener('keydown', handleFirstTab);
+            }
+            window.addEventListener('keydown', handleFirstTab);
+        </script>
+    </body>
+</html>
