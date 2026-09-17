@@ -249,6 +249,52 @@
             background: rgba(255, 255, 255, 0.02)
         }
 
+        .project-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 4px;
+            padding: 9px 14px;
+            border-radius: 9px;
+            background: linear-gradient(90deg, var(--accent), #3b82f6);
+            color: #021d23;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-1px);
+            opacity: 0.9;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .project-tag {
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.18);
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
         .project iframe {
             width: 100%;
             height: 380px;
@@ -355,11 +401,12 @@
                     <img class="avatar" src="perfil.png" alt="Foto de perfil" />
                     <div>
                         <h1>Olá, eu sou Cleidson Goes</h1>
-                        <p>Olá, sou um entusiasta de tecnologia que está direcionando seu foco para a área de Análise 
-                            de negócios/dados (BI). Atualmente, tenho experiência profissional e estou me especializando 
-                            em ferramentas e linguagens voltadas para dados, com cursos em Python, R, Power BI, SQL e Excel. 
-                            Estou focado em transformar dados em informações valiosas por meio de análises precisas, 
-                            visualizações impactantes e soluções baseadas em evidências para apoiar a tomada de decisões 
+                        <p>Olá, sou um entusiasta de tecnologia que está direcionando seu foco para a área de Análise
+                            de negócios/dados (BI). Atualmente, tenho experiência profissional e estou me especializando
+                            em ferramentas e linguagens voltadas para dados, com cursos em Python, R, Power BI, SQL e
+                            Excel.
+                            Estou focado em transformar dados em informações valiosas por meio de análises precisas,
+                            visualizações impactantes e soluções baseadas em evidências para apoiar a tomada de decisões
                             estratégicas.</p>
                         <p style="margin-top:10px;color:var(--muted);font-size:13px">Local: Salvador, Brasil •
                             Disponibilidade: júnior/Assistente/Auxiliar</p>
@@ -397,7 +444,8 @@
                         <div class="item">
                             <h3>Assistente Logístico — Vix Transportes Dedicados LTDA</h3>
                             <div class="meta">Mai/2022<br><br>
-                                • Desenvolvimento e monitoramento de indicadores de estoque, armazenagem e produtividade operacional<br>
+                                • Desenvolvimento e monitoramento de indicadores de estoque, armazenagem e produtividade
+                                operacional<br>
                                 • Registro de entradas e saídas de produtos em sistemas e planilhas<br>
                                 • Recebimento, conferência e armazenamento de mercadorias<br>
                                 • Controle de estoque, inventários e movimentação de materiais<br>
@@ -427,9 +475,9 @@
                     <div class="education">
                         <div class="item">
                             <h3>Programação Web — Trybe</h3>
-                            <div class="meta">Desenvolvimento Web Full Stack utilizando HTML, CSS, JavaScript, React, 
-                                Node.js, SQL e Git, criando aplicações completas, APIs, bancos de dados, interfaces 
-                                responsivas, testes automatizados, integração entre sistemas e implantação de projetos 
+                            <div class="meta">Desenvolvimento Web Full Stack utilizando HTML, CSS, JavaScript, React,
+                                Node.js, SQL e Git, criando aplicações completas, APIs, bancos de dados, interfaces
+                                responsivas, testes automatizados, integração entre sistemas e implantação de projetos
                                 em ambiente de nuvem.</div>
                         </div>
                         <div class="item">
@@ -490,6 +538,47 @@
 
                     <div class="projects-grid">
                         <div class="project">
+
+                            <h3>Sistema DF-e Register — Gestão de Documentos Fiscais</h3>
+
+                            <img class="project-image" src="sistema-dfe.png" alt="Tela do Sistema DF-e Register" />
+
+                            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+
+                                <a class="project-link" href="https://sistema.cjdatatech.gracigostore.com"
+                                    target="_blank" rel="noopener noreferrer">
+                                    Acessar sistema ↗
+                                </a>
+
+                                <span class="project-tag">
+                                    Demo: visitante@gmail.com | Senha: 123456
+                                </span>
+
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">TypeScript</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">Express</span>
+                                <span class="project-tag">MySQL</span>
+                                <span class="project-tag">JWT</span>
+                                <span class="project-tag">Power BI</span>
+                                <span class="project-tag">Responsivo</span>
+                            </div>
+
+                            <p class="meta" style="color:var(--muted);margin-top:10px">
+                                Descrição: “Sistema web desenvolvido para cadastro, consulta,
+                                edição e gerenciamento de documentos fiscais eletrônicos,
+                                incluindo NF-e, CT-e, MDF-e e clientes. O projeto possui
+                                autenticação de usuários, controle de acesso, integração com
+                                banco de dados MySQL e estrutura preparada para integração
+                                com Power BI, permitindo transformar os dados operacionais
+                                em informações para análise e tomada de decisão.”
+                            </p>
+
+                        </div>
+                        <div class="project">
                             <h3>Dashboard — Análise Financeira — Receita, Custo e Margem</h3>
                             <!-- Exemplo de iframe: substitua src pelo link de embed público do Power BI -->
                             <iframe title="Análise de Vendas" width="600" height="373.5"
@@ -508,12 +597,14 @@
                             <iframe title="Análise de Vendas" width="600" height="373.5"
                                 src="https://app.powerbi.com/view?r=eyJrIjoiNTI1ZmRhZWUtYjU1Zi00YTdjLWJmZmMtNmQyZjZhMzdmNjhmIiwidCI6Ijk4ZTg4MTVmLTljZWEtNDljNC1iYzhjLTljNWM5ZDRhYjRlZSJ9&pageName=5023f746bf427d74dca1"
                                 frameborder="0" allowFullScreen="true"></iframe>
-                            <p class="meta" style="color:var(--muted);margin-top:8px">Descrição: “Dashboard financeiro 
-                                desenvolvido no Power BI com foco na análise de receitas e desempenho ao longo do tempo. 
-                                O projeto explora a evolução da receita mensal e anual, além de detalhamentos por cliente 
-                                e por categoria, permitindo identificar os principais geradores de receita. Também 
-                                apresenta comparações entre custos e despesas, possibilitando uma visão clara para análises
-                                robustas e estratégicas para tomada de decisão.” Ferramentas: Power BI, DAX, Excel/CSV, 
+                            <p class="meta" style="color:var(--muted);margin-top:8px">Descrição: “Dashboard financeiro
+                                desenvolvido no Power BI com foco na análise de receitas e desempenho ao longo do tempo.
+                                O projeto explora a evolução da receita mensal e anual, além de detalhamentos por
+                                cliente
+                                e por categoria, permitindo identificar os principais geradores de receita. Também
+                                apresenta comparações entre custos e despesas, possibilitando uma visão clara para
+                                análises
+                                robustas e estratégicas para tomada de decisão.” Ferramentas: Power BI, DAX, Excel/CSV,
                                 modelagem de dados e processos de ETL"</p>
                         </div>
                         <div class="project">
@@ -522,11 +613,16 @@
                             <iframe title="Análise do Jogo" width="600" height="373.5"
                                 src="https://app.powerbi.com/view?r=eyJrIjoiNDFiOTc4ZmQtMjkxMi00ZDMxLWFmZTEtNTY3NGE4NmM3NGZkIiwidCI6Ijk4ZTg4MTVmLTljZWEtNDljNC1iYzhjLTljNWM5ZDRhYjRlZSJ9"
                                 frameborder="0" allowFullScreen="true"></iframe>
-                            <p class="meta" style="color:var(--muted);margin-top:8px">Descrição: “Dashboard desenvolvido no 
-                                Power BI voltado à gestão de estoque e faturamento, com análise da evolução das vendas ao longo 
-                                do tempo, valor de estoque por fornecedor, SKU e área de armazenamento, além de indicadores de 
-                                pedidos e giro de estoque. Proporciona visão estratégica para controle, reposição e otimização 
-                                de recursos.” Ferramentas: Power BI, DAX, Excel, modelagem de dados e processos de ETL"</p>
+                            <p class="meta" style="color:var(--muted);margin-top:8px">Descrição: “Dashboard desenvolvido
+                                no
+                                Power BI voltado à gestão de estoque e faturamento, com análise da evolução das vendas
+                                ao longo
+                                do tempo, valor de estoque por fornecedor, SKU e área de armazenamento, além de
+                                indicadores de
+                                pedidos e giro de estoque. Proporciona visão estratégica para controle, reposição e
+                                otimização
+                                de recursos.” Ferramentas: Power BI, DAX, Excel, modelagem de dados e processos de ETL"
+                            </p>
                         </div>
                         <div class="project">
                             <h3>Dashboard — Análise de dados do Jogo Pokemon Master Ex</h3>
@@ -534,9 +630,11 @@
                             <iframe title="Análise do Jogo" width="600" height="373.5"
                                 src="https://app.powerbi.com/view?r=eyJrIjoiNDk3ZWM3MTEtNjQwYS00MDZhLThhODUtMmJkMmNlZDE1MjQxIiwidCI6Ijk4ZTg4MTVmLTljZWEtNDljNC1iYzhjLTljNWM5ZDRhYjRlZSJ9"
                                 frameborder="0" allowFullScreen="true"></iframe>
-                            <p class="meta" style="color:var(--muted);margin-top:8px">Descrição: “Dashboard desenvolvido no 
+                            <p class="meta" style="color:var(--muted);margin-top:8px">Descrição: “Dashboard desenvolvido
+                                no
                                 Power BI com foco em manipulação de imagens tornando-as interativas e atuando
-                                também como botões.” Ferramentas: Power BI, DAX, Google sheets, modelagem de dados e processos de ETL"</p>
+                                também como botões.” Ferramentas: Power BI, DAX, Google sheets, modelagem de dados e
+                                processos de ETL"</p>
                         </div>
                     </div>
                 </article>
@@ -558,7 +656,8 @@
 
                 <div class="card small" style="margin-top:12px">
                     <h3>Resumo rápido</h3>
-                    <p class="meta">Analista de negócios/dados Junior — Experiência com projetos em Python e Power BI — Buscando
+                    <p class="meta">Analista de negócios/dados Junior — Experiência com projetos em Python e Power BI —
+                        Buscando
                         oportunidade como assistente/júnior.</p>
                 </div>
 
