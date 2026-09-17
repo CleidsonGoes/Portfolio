@@ -157,6 +157,43 @@
             gap: 12px
         }
 
+        .education-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .education-logo {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: #fff;
+            padding: 5px;
+        }
+
+        .education-item>div {
+            min-width: 0;
+        }
+
+        @media (max-width: 600px) {
+            .education-item {
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .education-logo {
+                width: 44px;
+                height: 44px;
+            }
+
+            .education-item h3 {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+        }
+
         .item {
             padding: 12px;
             border-radius: 12px;
@@ -415,15 +452,45 @@
 
                 <article class="section card" id="formacao" tabindex="0">
                     <h2>Formação educacional</h2>
+
                     <div class="education">
-                        <div class="item">
-                            <h3>Pós-Graduação em Cientista de dados — Data Science Academy</h3>
-                            <div class="meta">Em Andamento: início em novembro de 2025</div>
+
+                        <div class="item education-item">
+                            <img src="dsa.png" alt="Data Science Academy" class="education-logo">
+
+                            <div>
+                                <h3>Pós-Graduação em Ciências de Dados — Data Science Academy</h3>
+                                <div class="meta">Em Andamento: início em novembro de 2025</div>
+                            </div>
                         </div>
-                        <div class="item">
-                            <h3>Graduado em Análise e Desenvolvimento de Sistemas — Estácio</h3>
-                            <div class="meta">Conclusão: julho de 2025</div>
+
+                        <div class="item education-item">
+                            <img src="estacio.png" alt="Estácio" class="education-logo">
+
+                            <div>
+                                <h3>Graduado em Análise e Desenvolvimento de Sistemas — Estácio</h3>
+                                <div class="meta">Conclusão: Julho de 2025</div>
+                            </div>
                         </div>
+
+                        <div class="item education-item">
+                            <img src="senai.png" alt="SENAI" class="education-logo">
+
+                            <div>
+                                <h3>Técnico em Logística — Senai</h3>
+                                <div class="meta">Conclusão: Setembro de 2022</div>
+                            </div>
+                        </div>
+
+                        <div class="item education-item">
+                            <img src="ceep.png" alt="CEEP" class="education-logo">
+
+                            <div>
+                                <h3>Técnico em Administração — CEEP</h3>
+                                <div class="meta">Conclusão: Dezembro de 2017</div>
+                            </div>
+                        </div>
+
                     </div>
                 </article>
 
