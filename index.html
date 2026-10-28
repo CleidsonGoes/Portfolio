@@ -141,6 +141,15 @@
             color: var(--muted)
         }
 
+        /* Justificar os textos descritivos do portfólio */
+        .hero p,
+        .experience .item .meta,
+        #cursos .item .meta,
+        .project>p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
         .section {
             margin-top: 16px
         }
@@ -482,15 +491,29 @@
                     <img class="avatar" src="perfil.png" alt="Foto de perfil" />
                     <div>
                         <h1>Olá, eu sou Cleidson Goes</h1>
-                        <p>Olá, sou um entusiasta de tecnologia que está direcionando seu foco para a área de Análise
-                            de negócios/dados (BI). Atualmente, tenho experiência profissional e estou me especializando
-                            em ferramentas e linguagens voltadas para dados, com cursos em Python, R, Power BI, SQL e
-                            Excel.
-                            Estou focado em transformar dados em informações valiosas por meio de análises precisas,
-                            visualizações impactantes e soluções baseadas em evidências para apoiar a tomada de decisões
-                            estratégicas.</p>
+                        <p>
+                            Olá, sou um profissional de tecnologia com foco em Análise de Negócios,
+                            Análise de Dados e Business Intelligence (BI). Tenho experiência profissional
+                            com desenvolvimento de dashboards, tratamento de dados, automação de processos
+                            e elaboração de relatórios para apoiar a tomada de decisões.
+
+                            Minha formação e especialização incluem ferramentas e linguagens como Python,
+                            R, SQL, Power BI e Excel, além de conhecimentos em desenvolvimento web,
+                            lógica de programação e bancos de dados.
+
+                            Também desenvolvo sistemas web empresariais voltados à gestão e à otimização
+                            de processos operacionais, administrativos e logísticos, como soluções para
+                            gerenciamento de documentos fiscais, controle de almoxarifado e estoque e
+                            gestão de operações. Meus projetos integram tecnologia, dados e processos
+                            de negócio para automatizar rotinas, melhorar a organização das informações
+                            e ampliar a eficiência operacional.
+
+                            Meu objetivo é transformar dados e necessidades empresariais em soluções
+                            tecnológicas práticas, confiáveis e orientadas a resultados, contribuindo
+                            para a melhoria contínua dos processos e para decisões mais estratégicas.
+                        </p>
                         <p style="margin-top:10px;color:var(--muted);font-size:13px">Local: Salvador, Brasil •
-                            Disponibilidade: júnior/Assistente/Auxiliar</p>
+                            Disponibilidade: júnior</p>
                     </div>
                 </article>
 
@@ -514,6 +537,15 @@
                             <div>
                                 <h3>Graduado em Análise e Desenvolvimento de Sistemas — Estácio</h3>
                                 <div class="meta">Conclusão: Julho de 2025</div>
+                            </div>
+                        </div>
+
+                        <div class="item education-item">
+                            <img src="trybe.png" alt="Trybe" class="education-logo">
+
+                            <div>
+                                <h3>Desenvolvedor Web Full Stack — Estácio</h3>
+                                <div class="meta">Conclusão: Maio de 2024</div>
                             </div>
                         </div>
 
@@ -648,6 +680,48 @@
                         pelos links de compartilhamento dos seus relatórios.</p>-->
 
                     <div class="projects-grid">
+                        <div class="project">
+
+                            <h3>Sistema de Almoxarifado — Gestão e Controle de Estoque</h3>
+
+                            <img class="project-image" src="sistema-almoxarifado.png"
+                                alt="Tela do Sistema de Almoxarifado" />
+
+                            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+
+                                <a class="project-link" href="https://sistema-almoxarifado-ten.vercel.app/"
+                                    target="_blank" rel="noopener noreferrer">
+                                    Acessar sistema ↗
+                                </a>
+
+                                <span class="project-tag">
+                                    Demonstração online
+                                </span>
+
+                            </div>
+
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">TypeScript</span>
+                                <span class="project-tag">Vite</span>
+                                <span class="project-tag">Tailwind CSS</span>
+                                <span class="project-tag">Dexie.js</span>
+                                <span class="project-tag">IndexedDB</span>
+                                <span class="project-tag">PWA</span>
+                                <span class="project-tag">Responsivo</span>
+                            </div>
+
+                            <p class="meta" style="color:var(--muted);margin-top:10px">
+                                Descrição: “Sistema web desenvolvido para gerenciamento de almoxarifado
+                                e controle de estoque, com cadastro de produtos, categorias,
+                                fornecedores e locais de armazenamento. Possui registro de entradas
+                                e saídas, acompanhamento de movimentações, controle de estoque mínimo
+                                e máximo, além de um fluxo de solicitações de materiais com aprovação,
+                                separação e atendimento parcial ou completo. A aplicação conta com
+                                dashboard gerencial, filtros para consulta e interface responsiva,
+                                utilizando armazenamento local com IndexedDB e Dexie.js.”
+                            </p>
+                        </div>
                         <div class="project">
 
                             <h3>Sistema DF-e Register — Gestão de Documentos Fiscais</h3>
